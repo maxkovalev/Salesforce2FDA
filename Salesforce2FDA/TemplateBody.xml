@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- filename - mappingInstance.xml, 02/10/2011 -->
+<!-- this example has a manufacturer report as the primary source, user facility report as secondary source -->
+<PORR_IN040001UV01 xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\..\..\..\eMDRHL7\Impl_Files\Con061019.xsd" ITSVersion="XML_1.0">
+	<!-- populate reporter name (such as manufacturer or User Facility name under assigningAuthorityName -->
+	<!-- populate batchID under 'extension'-->
+	<!-- Batch ID format - Central File Number (CFN) concatenated with a timestamp (yyyymmddhh24miss) -->
+	<!-- For example, CFN = 6000018 Date- 11/14/2006, Time 18:07:25 will show as 6000018-20061114180725 -->
+  <id root="1.1" extension="6000018-20061114180725" assigningAuthorityName="MessageSender"/>
+  <creationTime value="20110210"/>
+  <!-- batch creation-->
+  <responseModeCode/>
+  <!--refers to HL7 Release information. CDRH at present is implementing Release 1-->
+  <!-- Please use V3NORMED_2005 for ICSR Release 1 as specified in the next line -->
+  <versionCode  code="V3NORMED_2005"/>
+  <interactionId/>
+  <!--  specify below the number of MDRs in a batch. 1 is used as an example below -->
+  <batchTotalNumber value="1"/>
+  <receiver>
+		<!-- batch receiver information -->
+		<!-- refer to the Vocabulary sheet in HL7Medwatch.xls file on how to address null values -->
+		<!-- Thre are three allowable null values -->
+        <!-- 'Asked but unknown'(ASKU),'Not applicable' (NA) and 'No information' (NI) -->
+		<!-- 'NA' has been added in the example below -->
+    <telecom/>
+    <device>
+      <id nullFlavor="NA"/>
+      <asAgent>
+        <representedOrganization>
+          <id nullFlavor="NA"/>
+          <name>CDRH</name>
+        </representedOrganization>
+      </asAgent>
+    </device>
+  </receiver>
+  <sender>
+		<!-- batch sender information -->
+    <telecom/>
+    <device>
+      <id nullFlavor="NA"/>
+      <asAgent>
+        <representedOrganization>
+          <id nullFlavor="NA"/>
+          <name>USA Device Manufacturer</name>
+        </representedOrganization>
+      </asAgent>
+    </device>
+  </sender>
+  
+</PORR_IN040001UV01>

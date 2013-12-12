@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- filename - mappingInstance.xml, 02/10/2011 -->
+<!-- this example has a manufacturer report as the primary source, user facility report as secondary source -->
+<PORR_IN040001UV01 xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\..\..\..\eMDRHL7\Impl_Files\Con061019.xsd" ITSVersion="XML_1.0">
+	<!-- populate reporter name (such as manufacturer or User Facility name under assigningAuthorityName -->
+	<!-- populate batchID under 'extension'-->
+	<!-- Batch ID format - Central File Number (CFN) concatenated with a timestamp (yyyymmddhh24miss) -->
+	<!-- For example, CFN = 6000018 Date- 11/14/2006, Time 18:07:25 will show as 6000018-20061114180725 -->
+  <id root="1.1" extension="6000018-20061114180725" assigningAuthorityName="MessageSender"/>
+  <creationTime value="20110210"/>
+  <!-- batch creation-->
+  <responseModeCode/>
+  <!--refers to HL7 Release information. CDRH at present is implementing Release 1-->
+  <!-- Please use V3NORMED_2005 for ICSR Release 1 as specified in the next line -->
+  <versionCode  code="V3NORMED_2005"/>
+  <interactionId/>
+  <!--  specify below the number of MDRs in a batch. 1 is used as an example below -->
+  <batchTotalNumber value="1"/>
+  <receiver>
+		<!-- batch receiver information -->
+		<!-- refer to the Vocabulary sheet in HL7Medwatch.xls file on how to address null values -->
+		<!-- Thre are three allowable null values -->
+        <!-- 'Asked but unknown'(ASKU),'Not applicable' (NA) and 'No information' (NI) -->
+		<!-- 'NA' has been added in the example below -->
+    <telecom/>
+    <device>
+      <id nullFlavor="NA"/>
+      <asAgent>
+        <representedOrganization>
+          <id nullFlavor="NA"/>
+          <name>CDRH</name>
+        </representedOrganization>
+      </asAgent>
+    </device>
+  </receiver>
+  <sender>
+		<!-- batch sender information -->
+    <telecom/>
+    <device>
+      <id nullFlavor="NA"/>
+      <asAgent>
+        <representedOrganization>
+          <id nullFlavor="NA"/>
+          <name>USA Device Manufacturer</name>
+        </representedOrganization>
+      </asAgent>
+    </device>
+  </sender>
+  <message>
+		<!-- If you are submitting a batch of MDR reports, indicate each report with a messageID below -->
+		<!-- The ids should be numeric starting with 1. If there is more than one in a batch, make the number sequential -->
+    <id  extension="1"/>
+    <creationTime nullFlavor="NA"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="PORR_IN04001" assigningAuthorityName="HL7"/>
+    <processingCode nullFlavor="NA"/>
+    <processingModeCode nullFlavor="NA"/>
+    <acceptAckCode nullFlavor="NA"/>
+    <receiver>
+      <telecom/>
+      <device>
+        <id nullFlavor="NA"/>
+      </device>
+    </receiver>
+    <sender>
+      <telecom/>
+      <device>
+        <id nullFlavor="NA"/>
+      </device>
+    </sender>
+		<!-- Attachments to the MDR can be embedded below. Please refer to the implementation guide materials for information on how to embed a document -->
+		<attachment>
+			<id nullFlavor="NA"/>
+			<text mediaType="text/plain" representation="B64">JVBERi0xLjQNJeLjz9MNCjYgMCBvYmo8PC9IWzQ3NiAxMzNdL0xpbmVhcml6ZWQgMS9FIDE3OTAv
+							TCA1Njg5L04gMS9PIDkvVCA1NTIzPj4NZW5kb2JqDSAgICAgICAgICAgICAgICAgICAgICAgICAg
+							DQp4cmVmDQo2IDkNCjAwMDAwMDAwMTYgMDAwMDAgbg0KMDAwMDAwMDYwOSAwMDAwMCBuDQowMDAw
+							MDAwNDc2IDAwMDAwIG4NCjAwMDAwMDA2ODUgMDAwMDAgbg0KMDAwMDAwMDgxMiAwMDAwMCBuDQow
+							MDAwMDAwODk2IDAwMDAwIG4NCjAwMDAwMDEyNjEgMDAwMDAgbg0KMDAwMDAwMTQ3NSAwMDAwMCBu
+							DQowMDAwMDAxNzE0IDAwMDAwIG4NCnRyYWlsZXINCjw8L1NpemUgMTUvUHJldiA1NTEzL1Jvb3Qg
+							NyAwIFIvSW5mbyA1IDAgUi9JRFs8YmYyNWQwY2RjZWVjMTUzM2ZmODBmMWE2NDA0YTAyNDk+PGM4
+							MzA4ZWYxYWY5YWJhNGRiYmM4ZmU0OTZiZDUyYTYzPl0+Pg0Kc3RhcnR4cmVmDQowDQolJUVPRg0K
+							ICAgICAgICAgICAgICAgICAgDQo4IDAgb2JqPDwvTGVuZ3RoIDU2L0ZpbHRlci9GbGF0ZURlY29k
+							ZS9MIDcwL1MgMzg+PnN0cmVhbQ0KeNpiYGBgY2Bg0mAAApZABlTACBJk4GhAFmODYgYGHwZOySYV
+							jaUSMLVslUCaCYgtAAIMAHWNA9INCmVuZHN0cmVhbQ1lbmRvYmoNNyAwIG9iajw8L1BhZ2VzIDMg
+							MCBSL1R5cGUvQ2F0YWxvZy9QYWdlTGFiZWxzIDEgMCBSL01ldGFkYXRhIDQgMCBSPj4NZW5kb2Jq
+							DTkgMCBvYmo8PC9Db250ZW50cyAxMiAwIFIvVHlwZS9QYWdlL1BhcmVudCAzIDAgUi9Sb3RhdGUg
+							MC9NZWRpYUJveFswIDAgNjEyIDc5Ml0vQ3JvcEJveFswIDAgNjEyIDc5Ml0vUmVzb3VyY2VzIDEw
+							IDAgUj4+DWVuZG9iag0xMCAwIG9iajw8L0ZvbnQ8PC9UVDIgMTEgMCBSPj4vUHJvY1NldFsvUERG
+							L1RleHRdL0V4dEdTdGF0ZTw8L0dTMSAxNCAwIFI+Pj4+DWVuZG9iag0xMSAwIG9iajw8L1R5cGUv
+							Rm9udC9FbmNvZGluZy9XaW5BbnNpRW5jb2RpbmcvQmFzZUZvbnQvVGltZXNOZXdSb21hblBTTVQv
+							Rmlyc3RDaGFyIDMyL0xhc3RDaGFyIDExNi9TdWJ0eXBlL1RydWVUeXBlL0ZvbnREZXNjcmlwdG9y
+							IDEzIDAgUi9XaWR0aHNbMjUwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMjUwIDAgMCAwIDAg
+							MCA1MDAgMCA1MDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAw
+							IDAgMCAwIDAgMCAwIDYxMSAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCA0NDQgNTAwIDQ0NCA1MDAg
+							NDQ0IDMzMyA1MDAgNTAwIDI3OCAwIDAgMCA3NzggNTAwIDUwMCAwIDAgMzMzIDM4OSAyNzhdPj4N
+							ZW5kb2JqDTEyIDAgb2JqPDwvTGVuZ3RoIDE0NS9GaWx0ZXIvRmxhdGVEZWNvZGU+PnN0cmVhbQ0K
+							SIk0is0KwjAQhO/7FHNMhKSbYGt7FUXw6t7EQ639UWgKNtDXN0VlmJmPYbLTxaGfaS+UiXg4SEfO
+							g5NSVYwdl7YqICMx+mRp1lhIQcsroXHW5ZDDb5ANsWVmvx7NHxe6KmnniDrGuhlGXapWG6dCRDe9
+							ca9nbXJbfMdiizY00+MZegt9kzMdhT4CDABYuyfnCg0KZW5kc3RyZWFtDWVuZG9iag0xMyAwIG9i
+							ajw8L1R5cGUvRm9udERlc2NyaXB0b3IvRm9udEJCb3hbLTU2OCAtMzA3IDIwMDAgMTAwN10vRm9u
+							dE5hbWUvVGltZXNOZXdSb21hblBTTVQvRmxhZ3MgMzQvU3RlbVYgODIvQ2FwSGVpZ2h0IDY1Ni9Y
+							SGVpZ2h0IDAvQXNjZW50IDg5MS9EZXNjZW50IC0yMTYvSXRhbGljQW5nbGUgMC9Gb250RmFtaWx5
+							KFRpbWVzIE5ldyBSb21hbikvRm9udFN0cmV0Y2gvTm9ybWFsL0ZvbnRXZWlnaHQgNDAwPj4NZW5k
+							b2JqDTE0IDAgb2JqPDwvVHlwZS9FeHRHU3RhdGUvU0EgZmFsc2UvT1AgZmFsc2UvU00gMC4wMi9v
+							cCBmYWxzZS9PUE0gMT4+DWVuZG9iag0xIDAgb2JqPDwvTnVtc1swIDIgMCBSXT4+DWVuZG9iag0y
+							IDAgb2JqPDwvUy9EPj4NZW5kb2JqDTMgMCBvYmo8PC9Db3VudCAxL0tpZHNbOSAwIFJdL1R5cGUv
+							UGFnZXM+Pg1lbmRvYmoNNCAwIG9iajw8L0xlbmd0aCAzMzI1L1R5cGUvTWV0YWRhdGEvU3VidHlw
+							ZS9YTUw+PnN0cmVhbQ0KPD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6
+							TlRjemtjOWQnPz4KPD9hZG9iZS14YXAtZmlsdGVycyBlc2M9IkNSTEYiPz4NCjx4OnhtcG1ldGEg
+							eG1sbnM6eD0nYWRvYmU6bnM6bWV0YS8nIHg6eG1wdGs9J1hNUCB0b29sa2l0IDIuOS4xLTEzLCBm
+							cmFtZXdvcmsgMS42Jz4NCjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5
+							OS8wMi8yMi1yZGYtc3ludGF4LW5zIycgeG1sbnM6aVg9J2h0dHA6Ly9ucy5hZG9iZS5jb20vaVgv
+							MS4wLyc+DQo8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0ndXVpZDozYTlkNGY1Ny1hODdmLTQw
+							MzgtYjM0Zi03YTFlOWFjY2ViOTMnIHhtbG5zOnBkZj0naHR0cDovL25zLmFkb2JlLmNvbS9wZGYv
+							MS4zLycgcGRmOlByb2R1Y2VyPSdBY3JvYmF0IERpc3RpbGxlciA2LjAgKFdpbmRvd3MpJz48L3Jk
+							ZjpEZXNjcmlwdGlvbj4NCjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSd1dWlkOjNhOWQ0ZjU3
+							LWE4N2YtNDAzOC1iMzRmLTdhMWU5YWNjZWI5MycgeG1sbnM6eGFwPSdodHRwOi8vbnMuYWRvYmUu
+							Y29tL3hhcC8xLjAvJyB4YXA6Q3JlYXRlRGF0ZT0nMjAwNi0wNy0xOVQyMjowMDozMC0wNDowMCcg
+							eGFwOkNyZWF0b3JUb29sPSdQU2NyaXB0NS5kbGwgVmVyc2lvbiA1LjIuMicgeGFwOk1vZGlmeURh
+							dGU9JzIwMDYtMDctMTlUMjI6MDA6MzAtMDQ6MDAnPjwvcmRmOkRlc2NyaXB0aW9uPg0KPHJkZjpE
+							ZXNjcmlwdGlvbiByZGY6YWJvdXQ9J3V1aWQ6M2E5ZDRmNTctYTg3Zi00MDM4LWIzNGYtN2ExZTlh
+							Y2NlYjkzJyB4bWxuczp4YXBNTT0naHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLycgeGFw
+							TU06RG9jdW1lbnRJRD0ndXVpZDpkNDkwNDMxZi0wZGExLTQyNjMtYmE4Ny01YTQ2ZDc1YmU1Yjkn
+							Lz4NCjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSd1dWlkOjNhOWQ0ZjU3LWE4N2YtNDAzOC1i
+							MzRmLTdhMWU5YWNjZWI5MycgeG1sbnM6ZGM9J2h0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8x
+							LjEvJyBkYzpmb3JtYXQ9J2FwcGxpY2F0aW9uL3BkZic+PGRjOnRpdGxlPjxyZGY6QWx0PjxyZGY6
+							bGkgeG1sOmxhbmc9J3gtZGVmYXVsdCc+TWljcm9zb2Z0IFdvcmQgLSBEb2N1bWVudDE8L3JkZjps
+							aT48L3JkZjpBbHQ+PC9kYzp0aXRsZT48ZGM6Y3JlYXRvcj48cmRmOlNlcT48cmRmOmxpPkxlbjwv
+							cmRmOmxpPjwvcmRmOlNlcT48L2RjOmNyZWF0b3I+PC9yZGY6RGVzY3JpcHRpb24+DQo8L3JkZjpS
+							REY+DQo8L3g6eG1wbWV0YT4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAg
+							ICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0ndyc/Pg0KZW5kc3RyZWFtDWVuZG9iag01IDAg
+							b2JqPDwvTW9kRGF0ZShEOjIwMDYwNzE5MjIwMDMwLTA0JzAwJykvQ3JlYXRpb25EYXRlKEQ6MjAw
+							NjA3MTkyMjAwMzAtMDQnMDAnKS9UaXRsZShNaWNyb3NvZnQgV29yZCAtIERvY3VtZW50MSkvQ3Jl
+							YXRvcihQU2NyaXB0NS5kbGwgVmVyc2lvbiA1LjIuMikvUHJvZHVjZXIoQWNyb2JhdCBEaXN0aWxs
+							ZXIgNi4wIFwoV2luZG93c1wpKS9BdXRob3IoTGVuKT4+DWVuZG9iag14cmVmDQowIDYNCjAwMDAw
+							MDAwMDAgNjU1MzUgZg0KMDAwMDAwMTc5MCAwMDAwMCBuDQowMDAwMDAxODIzIDAwMDAwIG4NCjAw
+							MDAwMDE4NDYgMDAwMDAgbg0KMDAwMDAwMTg5NiAwMDAwMCBuDQowMDAwMDA1Mjk3IDAwMDAwIG4N
+							CnRyYWlsZXINCjw8L1NpemUgNj4+DQpzdGFydHhyZWYNCjExNg0KJSVFT0YNCg==
+						<reference value="sample_attachment.pdf"/>
+				</text>
+		</attachment>   
+    <controlActProcess moodCode="EVN">
+      <code code="PORR_TE040001UV01" codeSystem="HL7" codeSystemName="HL7 Trigger Event Id"/>
+          <!-- Date of this Report, BOX B4 -->
+          <effectiveTime value="20050101"/>
+          <authorOrPerformer typeCode="AUT">
+        <assignedPerson>
+					<!-- Type of Reporter, indicate Manufacturer or User Facility or Distributor or Voluntary. Use vocabulary -->
+					<!-- Code is populated with value for manufacturer -->
+          <code code="C53616" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Reporter"/>
+        </assignedPerson>
+      </authorOrPerformer>
+      <subject>
+        <investigationEvent>
+          <!-- Manufacturer Report Number, BOX G9 -->
+          <id root="2.16.840.1.113883.3.24" extension="5555555-2005-55555" assigningAuthorityName="FDA"/>
+          <!-- Adverse Event, Product Problem, Adverse Event and Product Problem, BOX B1 -->
+		  <!-- Code is populated with Value for Adverse Event -->
+          <code code="C41331" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Adverse_Event_Or_Product_Problem_Report"/>
+          <!-- Additional Manufacturer Narrative, BOX H10 -->
+          <text mediaType="text/plain">Our evaluation revealed that at this moment we need to evaluate more</text>
+          <statusCode/>
+          <activityTime/>
+          <availabilityTime/>
+          <authorOrPerformer typeCode="AUT">
+            <assignedEntity/>
+          </authorOrPerformer>
+          <trigger>
+            <reaction>
+							<!-- Describe Event or Problem, BOX B5 -->
+              <text mediaType="text/plain">During procedure the patient seemed to be doing well. Then, things went a little down-hill</text>
+              <!-- Date of Event, BOX B3 -->
+              <effectiveTime value="20050101"/>
+              <subject>
+                <investigativeSubject>
+                  <subjectAffectedPerson>
+										<!-- Patient Identifier, BOX A1 -->
+                    <name>XYZ12345</name>
+                    <!-- Sex, BOX A3, Code is populated with Male-->
+                    <administrativeGenderCode code="C20197" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Sex"/>
+                    <!-- Date of Birth, BOX A2 -->
+                    <birthTime value="20000101"/>
+                    <!-- Outcomes Attributed to Adverse Event\Death Date, BOX B2  -->
+                    <deceasedTime value="20040101"/>
+                    <!-- Other Relevant History, Including Preexisting Medical Conditions\Race, BOX B7 -->
+				    <!-- Code is populated with Value for Native Hawaiian\Other Pacific Islander  -->
+                    <raceCode code="C41219" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Race"/>
+                  </subjectAffectedPerson>
+                  <subjectOf>
+                    <observation moodCode="EVN">
+				    <!-- Age at Time of Event, BOX A2 -->
+				    <!-- Code is populated with Concept ID for age -->
+                      <code code="C25150" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Age"/>
+                      <!-- PQ = Phyical Quantity -->
+                      <value xsi:type="PQ" value="4" unit="YR"/>
+                    </observation>
+                  </subjectOf>
+                  <subjectOf>
+                    <observation moodCode="EVN">
+											<!-- Weight, A4 -->
+											<!-- Code is populated with Concept ID for weight -->
+                      <code code="C25208" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Weight"/>
+                      <value xsi:type="PQ" value="20" unit="LBS"/>
+                    </observation>
+                  </subjectOf>
+                  <subjectOf>
+                    <observation moodCode="EVN">
+											<!-- Relevant Tests/Labratory Data, Including Dates, BOX B6 -->
+											<!-- Code is populated with Concept ID for Test_Result -->
+                      <code code="C36292" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Test_Result"/>
+                      <value xsi:type="ED" mediaType="text/plain">CT of lumbar spine</value>
+                    </observation>
+                  </subjectOf>
+                  <subjectOf>
+                    <observation moodCode="EVN">
+											<!-- Other Relevant History, Including Preexisting Medical Conditions\Race, BOX B7 -->
+											<!-- Code is populated with Concept ID for Other_Personal_Medical_History -->
+                      <code code="C53263" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Other_Personal_Medical_History"/>
+                      <value xsi:type="ED" mediaType="text/plain">Patient was in good health before hospitalization</value>
+                    </observation>
+                  </subjectOf>
+                  <subjectOf>
+                    <observation moodCode="EVN">
+											<!-- Event Problem Codes\Patient Problem Codes, BOX F10 -->
+											<!-- for multiple values, repeat subjectOf block -->
+											<!-- Use NCI concept code to indicate the concept -->
+                                            <!-- Value is populated with valid MAUDE Patient Problem Code such as Aneurysm-->
+                                            <!-- use FDA OID for codeSystem in value -->
+                      <code code="C53983" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Patient_Problem_Code"/>
+                      <value xsi:type="CE" code="1708" codeSystem="2.16.840.1.113883.3.24"/>
+                    </observation>
+                  </subjectOf>
+                  <subjectOf>
+                    <observation moodCode="EVN">
+				    <!-- Event Problem Codes\Patient Problem Codes, BOX F10 -->
+				    <!-- Use NCI concept code to indicate the concept -->
+                   <!-- Value is populated with valid MAUDE Patient Problem Code such as Aneurysm-->
+                   <!-- use FDA OID for codeSystem in value -->
+                      <code code="C53983" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Patient_Problem_Code"/>
+                      <value xsi:type="CE" code="2229" codeSystem="2.16.840.1.113883.3.24"/>
+                    </observation>
+                  </subjectOf>
+                </investigativeSubject>
+              </subject>
+              <location>
+                <locatedEntity>
+									<!-- Location where Event Occurred, BOX F12 -->
+									<!-- Code is Populated with Concept ID for Hospital -->
+                  <location>
+                    <code code="C16696" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Location">
+                      <originalText>On the road</originalText>
+                    </code>
+                  </location>
+                </locatedEntity>
+              </location>
+              <pertinentInformation>
+                <primarySourceReport>
+                  <id nullFlavor="ASKU"/>
+                  <code nullFlavor="ASKU"/>
+                  <!-- Initial Reporter Also Sent Report To FDA? BOX E.4 -->
+									<!-- populate 'false' if E4 is YES -->
+									<!-- populate 'true' if E4 is NO -->
+									<!-- populate with nullFlavor="ASKU" (<receiver nullFlavor="ASKU">) if Unknown or nullFlavor="NI" if there is no information -->
+                  <receiver negationInd="false">
+                    <assignedEntity>
+                      <assignedOrganization>
+                        <name>FDA</name>
+                      </assignedOrganization>
+                    </assignedEntity>
+                  </receiver>
+                  <author>
+                    <assignedEntity>
+											<!-- Initial Reporter Occupation, BOX E3 -->
+											<!-- Code is populated with value for Audiologist -->
+                      <code code="C51804" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Occupation">
+												<!-- other occupation -->
+                        <originalText mediaType="text/plain">Taxi cab driver</originalText>
+                      </code>
+                      <!-- The value of BOX.E.2 will be inferred from the choice offered for E.3 -->
+                      <assignedPerson>
+                        <name>
+													<!-- Initial Reporter prefix, BOX E1 -->
+                          <prefix>Dr</prefix>
+                          <!-- Initial Reporter First Name, BOX E1 -->
+                          <given>Jane</given>
+                          <!-- Initial Reporter Middle Name, BOX E1 -->
+                          <given>Adams</given>
+                          <!-- Initial Reporter Last Name, BOX E1 -->
+                          <family>Doe</family>
+                        </name>
+                        <!-- Initial Reporter Phone Number, BOX E1 -->
+                        <telecom value="tel:+1(555)555-5555"/>
+                        <!-- Initial Reporter Email Address, BOX E1 -->
+                        <telecom value="mailto:nowhere@nowhere.com"/>
+                        <!-- Fax Number, BOX E1 -->
+                        <telecom value="fax:+1(555)555-5555"/>
+                        <addr>
+													<!-- Initial Reporter Address\Line 1, BOX E1 -->
+                          <streetAddressLine>888 No Street1</streetAddressLine>
+                          <!-- Initial Reporter Address\Line 2, BOX E1 -->
+                          <streetAddressLine>No Street2)</streetAddressLine>
+                          <!-- Initial Reporter Address\City, BOX E1 -->
+                          <city>No City</city>
+                          <!-- Initial Reporter Address\State, BOX E1 -->
+                          <state>DC</state>
+                          <!-- Initial Reporter Address\Zip Code, BOX E1 -->
+                          <postalCode>55555-5555</postalCode>
+                        </addr>
+                      </assignedPerson>
+                      <representedOrganization>
+												<!-- Initial Reporter Facility Name, BOX E1 -->
+                        <name>Get Better Hospital</name>
+                      </representedOrganization>
+                    </assignedEntity>
+                  </author>
+                </primarySourceReport>
+              </pertinentInformation>
+            </reaction>
+          </trigger>
+          <pertinentInformation1>
+						<!-- Follow-up Number if Follow-up is selected in BOX F7 -->
+            <sequenceNumber value="1"/>
+            <secondaryCaseNotification>
+							<!-- UF/Importer Report Number, BOX F2 FDA OID is used here temporarily-->
+              <id root="2.16.840.1.113883.3.24" extension="NA" assigningAuthorityName="FDA"/>
+              <!-- Type of Report, BOX F7 Populated with Initial Report of An Adverse Event -->
+              <code code="C53620" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Report"/>
+              <!-- Date User Facility or Importer Became Aware of Event, BOX F6 -->
+              <effectiveTime value="20050101"/>
+              <!-- Report Sent to FDA?, BOX F11 -->
+							<!-- populate 'false' if answer is YES -->
+							<!-- populate 'true' if answer is NO -->
+              <receiver negationInd="false">
+								<!-- Date Report Sent to FDA, if answer is YES to BOX F11, BOX F11 -->
+                <time value="20050101"/>
+                <!-- Code below supports BOX F11. Who was the report sent to? Populated with FDA -->
+								<!-- Code is populated with value for FDA -->
+                <assignedEntity>
+                  <assignedOrganization>
+                    <code code="C17237" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Report_Receiver"/>
+                  </assignedOrganization>
+                </assignedEntity>
+              </receiver>
+              <author>
+                <assignedEntity>
+									<!-- Report from User Facility or Importer, BOX F1 -->
+									<!-- Code is populated with value for User Facility -->
+                  <code code="C53567" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Reporter"/>
+                  <assignedOrganization>
+                    <name nullFlavor="NA"/>
+                    <addr>
+											<!-- User Facility or Importer Name/Address\Facility, BOX F3 -->
+                      <additionalLocator>Get Better Hospital</additionalLocator>
+                      <!-- User Facility or Importer Name\Address\Line 1, BOX F3 -->
+                      <streetAddressLine>888 Nostreet1</streetAddressLine>
+                      <!-- User Facility or Importer Name\Address\Line 2, BOX F3 -->
+                      <streetAddressLine>Nostreet2</streetAddressLine>
+                      <!-- User Facility or Importer Name\Address\City, BOX F3 -->
+                      <city>No City</city>
+                      <!-- User Facility or Importer Name\Address\State, BOX F3 -->
+                      <state>VA</state>
+                      <!-- User Facility or Importer Name\Address\Zip Code, BOX F3 -->
+                      <postalCode>55555-5555</postalCode>
+                      <!-- User Facility or Importer Name\Address\Country, BOX F3 -->
+                      <country>World</country>
+                    </addr>
+                    <contactParty>
+                      <contactPerson>
+                        <name>
+						  <!-- Contact Person\Title\Salutation, BOX F4 -->							
+                          <prefix>Mr.</prefix>
+						  <!-- Contact Person\First Name, BOX F4 -->
+						  <given>John</given>
+                          <!-- Contact Person\Middle Name, BOX F4 -->
+                          <given>M</given>
+                          <!-- Contact Person\Last Name, BOX F4 -->
+                          <family>Adams</family>
+                        </name>
+                        <!-- Phone Number, BOX F5 -->
+                        <telecom value="tel:+1(555)555-5555"/>
+                        <!-- Email Address, BOX F5 -->
+                        <telecom value="mailto:noone@noone.com"/>
+                      </contactPerson>
+                    </contactParty>
+                  </assignedOrganization>
+                </assignedEntity>
+              </author>
+            </secondaryCaseNotification>
+          </pertinentInformation1>
+          <pertinentInformation1>
+            <secondaryCaseNotification>
+              <id nullFlavor="NA"/>
+              <code nullFlavor="NI"/>
+              <!-- Report Sent to Manufacturer? BOX F13 -->
+							<!-- populate 'false' if F13 is YES -->
+							<!-- populate 'true' if F13 is NO or Unknown -->
+              <receiver negationInd="false">
+                <time>
+									<!-- Report sent to Manufacturer\YES, populate date below, BOX F13 -->
+									<!-- The beginning of the time interval captures when the report was sent to manufacturer, BOX F13 -->
+                  <low value="20050110"/>
+                  <!-- Date Received by Manufacturer, BOX G4 -->
+									<!-- The end of the time interval captures when the report was received by manufacturer, BOX G4 -->
+                  <high value="20050114"/>
+                </time>
+                <assignedEntity>
+                  <assignedOrganization>
+										<!-- Code below supports BOX F13. Who was the report sent to? -->
+										<!-- Code is populated with value for MANUFACTURER -->
+                    <code code="C53616" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Report_Receiver"/>
+                    <!-- Manufacturer Name and Address\Name, BOX F14 -->
+                    <name>American Reprocessor Choice</name>
+                    <!-- Fax Number, BOX F14 -->
+                    <telecom value="fax:+1(888)888-8888"/>
+                    <!-- Email Address, BOX F14 -->
+                    <telecom value="mailto:repr@noone.com"/>
+                    <addr>
+					<!-- Manufacturer Name and Address\Address Line 1, BOX F14 -->
+                      <streetAddressLine>41 New Street</streetAddressLine>
+                      <!-- Manufacturer Name and Address\Address Line 2, BOX F14 -->
+                      <streetAddressLine/>
+                      <!-- Manufacturer Name and Address\City, BOX F14 -->
+                      <city>New City</city>
+                      <!-- Manufacturer Name and Address\State, BOX F14 -->
+                      <state>NY</state>
+                      <!-- Manufacturer Name and Address\Zip Code, BOX F14 -->
+                      <postalCode>88887-7272</postalCode>
+                      <!-- Manufacturer Name and Address\Country, BOX F14 -->
+                      <country>USA</country>
+                    </addr>
+                  </assignedOrganization>
+                </assignedEntity>
+              </receiver>
+            </secondaryCaseNotification>
+          </pertinentInformation1>
+          <pertinentInformation2>
+						<!-- Outcomes Attributed to Adverse Event, BOX B2 -->
+						<!-- First code is Populated with Concept ID for Adverse_Event_Outcome, Value code populated with value for Hospitalization -->
+            <caseSeriousness moodCode="EVN">
+              <code code="C49489" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Adverse_Event_Outcome"/>
+              <value xsi:type="CE" code="C25179" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+            </caseSeriousness>
+          </pertinentInformation2>
+          <pertainsTo>
+            <procedureEvent>
+              <code nullFlavor="ASKU"/>
+              <device>
+                <identifiedDevice>
+				<!-- Device Other Number, BOX D4-->
+                  <id extension="1234567891011"/>
+                  <identifiedDevice>
+					<!-- Device Serial Number, BOX D4  -->
+                    <id extension="XYZ45678"/>
+                    <!-- Device Manufacture Date, BOX H4 -->
+                    <existenceTime value="20000101"/>
+                    <!-- Device Lot Number, BOX D4 -->
+                    <lotNumberText mediaType="text/plain">ABCD123</lotNumberText>
+                    <!-- Device Expiration Date, BOX D4 -->
+                    <expirationTime value="20060101"/>
+                    <asManufacturedProduct>
+					<!-- Device Catalog Number, BOX D4 -->
+                      <id extension="SMTFY999"/>
+                      <manufacturerOrReprocessor>
+						<!-- The manufacturer or Reprocessor element can appear twice -->
+                        <!-- The first instance, within this example, refers to the manufacturer -->
+                        <code code="C53616" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Manufacturer"/>
+                        <!-- Manufacturer Name, City and State\Name, BOX D3 -->
+                        <name>USA Device Manufacturer</name>
+                        <!-- Fax Number, BOX D3 -->
+                        <telecom value="fax:+1(666)666-6666"/>
+                        <!-- Email Address, BOX D3 -->
+                        <telecom value="mailto:mfr@noone.com"/>
+                        <addr>
+						<!-- Manufacturer Name, City and State\Address Line 1, BOX D3 -->
+                          <streetAddressLine>555 Manufacturer Drive</streetAddressLine>
+                          <!-- Manufacturer Name, City and State\City Line 2, BOX D3 -->
+                          <streetAddressLine>Manufacturer Drive2</streetAddressLine>
+                          <!-- Manufacturer Name, City and State\City, BOX D3 -->
+                          <city>Manufacturer City</city>
+                          <!-- Manufacturer Name, City and State\State, BOX D3 -->
+                          <state>CA</state>
+                          <!-- Manufacturer Name, City and State\Zip Code, BOX D3 -->
+                          <postalCode>12345-1234</postalCode>
+                          <!-- Manufacturer Name, City and State\Country, BOX D3 -->
+                          <country>USA</country>
+                        </addr>
+                        <asRole>
+                          <performance>
+                            <investigationEvent>
+                              <component1>
+						      <!-- Evaluation Codes\Results, BOX H6 -->
+						      <!-- Use NCI concept code to indicate the concept -->
+	                          <!-- use FDA OID for codeSystem in value -->
+                              <!-- Value is populated with valid MAUDE Evaluation Code Result, Critical information not displayed-->
+                              <evaluationResult>
+                                  <code code="C53985" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Evaluation_Result_Code"/>
+                                  <value xsi:type="CE" code="704" codeSystem="2.16.840.1.113883.3.24"/>
+                                </evaluationResult>
+                              </component1>
+                              <!-- Evaluation Codes\Conclusions, BOX H6 -->
+                               <!-- Use NCI concept code to indicate the concept -->
+	                          <!-- use FDA OID for codeSystem in value -->
+                              <!-- Value is populated with valid MAUDE for Evaluation Code Conclusion, Device assembly-->		
+                              <component2>
+                                <evaluationConclusion>
+                                  <code code="C53986" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Evaluation_Conclusion_Code"/>
+                                  <value xsi:type="CE" code="41" codeSystem="2.16.840.1.113883.3.24"/>
+                                </evaluationConclusion>
+                              </component2>
+                              <component3>
+						      <!-- Evaluation Codes\Method, BOX H6 -->
+						      <!-- Use NCI concept code to indicate the concept -->
+	                          <!-- use FDA OID for codeSystem in value -->
+						      <!-- Value is populated with validMAUDE Code for Evaluation Method Code, Device from reserve sample evaluated -->
+                                <evaluationMethod>
+                                  <code code="C53984" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Evaluation_Method_Code"/>
+                                  <value xsi:type="CE" code="12" codeSystem="2.16.840.1.113883.3.24"/>
+                                </evaluationMethod>
+                              </component3>
+                            </investigationEvent>
+                          </performance>
+                        </asRole>
+			<!-- Box G1 information goes below -->
+			<!-- Please provide the right information in the right block as specified below -->
+			<!-- Please submit MDR CONTACT information as the first address or address one -->
+			<!-- Please submit MANUFACTURING SITE information as the second address or address two  -->
+			<!-- if you have only ONE address, please submit it in the right block and leave the other one blank-->
+                        <contactParty>
+  				
+						  <!-- This contactParty contains the G1 MDR contact information -->	
+                          <addr>
+						    <!-- Contact Office - Name\Address\Facility, BOX G1 -->
+                            <additionalLocator>USA Device Manufacturer - MDR Contact</additionalLocator>
+                            <!-- Contact Office - Name\Address\Address Line 1, BOX G1 -->
+                            <streetAddressLine>999 Lala Lane</streetAddressLine>
+                            <!-- Contact Office - Name\Address\Address Line 2, BOX G1 -->
+                            <streetAddressLine>Lala Lane Line 2</streetAddressLine>
+                            <!-- Contact Office - Name\Address\City, BOX G1 -->
+                            <city>Bam Bam</city>
+                            <!-- Contact Office - Name\Address\State, BOX G1 -->
+                            <state>VA</state>
+                            <!-- Contact Office - Name\Address\Zip Code, BOX G1 -->
+                            <postalCode>12345-8888</postalCode>
+                            <!-- Contact Office - Name\Address\Country, BOX G1 -->
+                            <country>USA</country>
+                          </addr>
+                          <!-- Contact Office - Fax Number, BOX G1 -->
+                          <telecom value="fax:+1(777)777-7777"/>
+                          <!-- Contact Office - Email Address, BOX G1 -->
+                          <telecom value="mailto:mdrContact@noone.com"/>
+                          <!-- Manufacturer Phone Number, BOX G2 -->
+                          <telecom value="tel:+1(111)666-7777"/>
+                          <contactManufacturerContact>
+                            <name>
+						     <!-- Contact Office - Name\Address\Title\Salutation, BOX G1 -->
+                              <prefix>Mr.</prefix>
+                              <!-- Contact Office - Name\Address\First Name, BOX G1 -->
+                              <given>John</given>
+                              <!-- Contact Office - Name\Address\Middle Name, BOX G1 -->
+                              <given>Quincy</given>
+                              <!-- Contact Office - Name\Address\Last Name, BOX G1 -->
+                              <family>Adams</family>
+                            </name>
+                          </contactManufacturerContact>
+                        </contactParty>                        
+                        <contactParty>
+						  <!-- This contactParty contains the G1 manufacturing site information -->                          
+                          <addr>
+						    <!-- Manufacturing Site - Name\Address\Facility, BOX G1 -->
+                            <additionalLocator>USA Device Manufacturing Site</additionalLocator>
+                            <!-- Manufacturing Site - Name\Address\Address Line 1, BOX G1 -->
+                            <streetAddressLine>111 Lois Lane</streetAddressLine>
+                            <!-- Manufacturing Site - Name\Address\Address Line 2, BOX G1 -->
+                            <streetAddressLine>Daily Planet</streetAddressLine>
+                            <!-- Manufacturing Site - Name\Address\City, BOX G1 -->
+                            <city>Metropolis</city>
+                            <!-- Manufacturing Site - Name\Address\State, BOX G1 -->
+                            <state>IL</state>
+                            <!-- Manufacturing Site - Name\Address\Zip Code, BOX G1 -->
+                            <postalCode>12345-8888</postalCode>
+                            <!-- Manufacturing Site - Name\Address\Country, BOX G1 -->
+                            <country>USA</country>
+                          </addr>
+                          <!-- Manufacturing Site - Fax Number, BOX G1 -->
+                          <telecom value="fax:+1(222)333-4444"/>
+                          <!-- Manufacturing Site - Email Address, BOX G1 -->
+                          <telecom value="mailto:site@dailyplanet.com"/>
+                          <!-- Manufacturing Site - Phone Number, BOX G2 -->
+                          <telecom value="tel:+1(111)666-7777"/>
+                          <contactManufacturerContact>
+                            <name>
+						     <!-- Manufacturing Site - Name\Address\Title, BOX G1 -->
+                              <prefix>Mr.</prefix>
+                              <!-- Manufacturing Site - Name\Address\First Name, BOX G1 -->
+                              <given>Clark</given>
+                              <!-- Manufacturing Site - Name\Address\Middle Name, BOX G1 -->
+                              <given>Bar</given>
+                              <!-- Manufacturing Site - Name\Address\Last Name, BOX G1 -->
+                              <family>Kent</family>
+                            </name>
+                          </contactManufacturerContact>
+                        </contactParty>
+                      </manufacturerOrReprocessor>
+                    </asManufacturedProduct>
+                    <asManufacturedProduct>
+				    <!-- The manufacturer or Reprocessor element can appear twice -->
+                    <!-- The second instance, within this example, refers to the reprocessor, BOX D9  -->
+                      <manufacturerOrReprocessor>
+                        <code code="C53614" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Manufacturer"/>
+                        <!-- Name and Address of Reprocessor\Name, BOX D9 -->
+                        <name>American Reprocessor Choice</name>
+                        <!-- Fax Number, BOX D9 -->
+                        <telecom value="fax:+1(888)888-8888"/>
+                        <!-- Email Address, BOX D9 -->
+                        <telecom value="mailto:repr@noone.com"/>
+                        <addr>
+						<!-- Name and Address of Reprocessor\Address Line 1, BOX D9 -->
+                          <streetAddressLine>41 New Street</streetAddressLine>
+                          <!-- Name and Address of Reprocessor\Address Line 2, BOX D9 -->
+                          <streetAddressLine>New Street Line 2</streetAddressLine>
+                          <!-- Name and Address of Reprocessor\City, BOX D9 -->
+                          <city>New City</city>
+                          <!-- Name and Address of Reprocessor\State, BOX D9 -->
+                          <state>MD</state>
+                          <!-- Name and Address of Reprocessor\Zip Code, BOX D9 -->
+                          <postalCode>88887-7272</postalCode>
+                          <!-- Name and Address of Reprocessor\Country, BOX D9 -->
+                          <country/>
+                        </addr>
+                      </manufacturerOrReprocessor>
+                    </asManufacturedProduct>
+                    <inventoryItem>
+					<!-- Device Model Number, BOX D4 -->
+                      <manufacturedDeviceModel>
+                        <id extension="ABCDE"/>
+                        <!-- Common Device Name\Product Code, BOX D2 Populate with MAUDE Code FRN -->
+                        <code code="FRN" codeSystem="2.16.840.1.113883.3.24" codeSystemName="Type_of_Device">
+                          <originalText mediaType="text/plain">All in one pump</originalText>
+                        </code>
+                        <!-- Brand Name, BOX D1 -->
+                        <manufacturerModelName mediaType="text/plain">THE ONE DEVICE</manufacturerModelName>
+                        <asRegulatedProduct>
+						<!-- Premarket Number, BOX G5 -->
+                          <id extension="P000001"/>
+                        </asRegulatedProduct>
+                      </manufacturedDeviceModel>
+                    </inventoryItem>
+                  </identifiedDevice>
+                  <subjectOf>
+                    <deviceObservation>
+											<!-- Device Available for Evaluation?, BOX D10  -->
+											<!-- Code is populated with Concept ID for question -->
+											<!-- populate true for YES and a date if available -->
+											<!-- populate false for NO -->
+                      <code code="C53449" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Device_available_for_evaluation"/>
+                      <!-- Returned to Manufacturer on, BOX D10 -->
+                      
+			<effectiveTime value="20050101"/>
+                      <value xsi:type="BL" value="true"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+						<!-- Approximate Age of Device, BOX F9 Code is concept id for approximate_age_of_device -->
+                      <code code="C53451" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Approximate_Age_of_Device"/>
+                      <value xsi:type="PQ" value="4" unit="YR"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+				 <!-- Event Problem Codes\Device Code, BOX F10 -->
+				 <!-- for multiple values, repeat subjectOf block -->
+				 <!-- Use NCI concept code to indicate the concept -->
+                 <!-- use FDA OID for codeSystem in value -->
+				 <!--Value populated with valid MAUDE Device Problem Code such as 1449 parameter calculations, incorrect and 1450 paravalvular leak -->
+                    <deviceObservation>
+                      <code code="C53982" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Device_Problem_Code"/>
+                      <value xsi:type="CE" code="1450" codeSystem="2.16.840.1.113883.3.24"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+                      <code code="C53982" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Device_Problem_Code"/>
+                      <value xsi:type="CE" code="1449" codeSystem="2.16.840.1.113883.3.24"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+						<!-- Device Evaluated by Manufacturer?, BOX H3 -->
+						<!-- Code is populated with Concept ID for question -->
+						<!-- populate true for YES -->
+						<!-- populate false for NO -->
+                      <code code="C53629" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Device_Evaluated_By_Manufacturer"/>
+                      <value xsi:type="BL" value="false"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+						<!-- Device Evaluated by Manufacturer\Returned to Manufacturer, BOX H3 -->
+						<!-- Code is populated with Concept ID for question -->
+						<!-- populate true for YES -->
+						<!-- populate false for NO -->
+                      <code code="C53591" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Device_Returned_to_Manufacturer_for_Evaluation"/>
+                      <value xsi:type="BL" value="false"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+						<!-- Device Evaluated by Manufacturer\Evaluation Summary Attached, BOX H3 -->
+						<!-- Code is populated with Concept ID for question -->
+						<!-- populate true for YES -->
+						<!-- populate false for NO -->
+                      <code code="C53592" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Evaluation_Summary_Status"/>
+                      <value xsi:type="BL" value="false"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+						<!-- Device Evaluated by Manufacturer\Explain why not evaluated or provide code, BOX H3 -->
+						<!-- Code is populated with Concept ID for Reason for non-evaluation -->
+						<!-- populate FDA OID for value Code -->
+						<!-- Value is MAUDE code for Other Reason for Non Evaluation -->
+                      <code code="C53593" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Reason_for_Non-Evaluation"/>
+                      <value xsi:type="CE" code="81" codeSystem="2.16.840.1.113883.3.24">
+                        <originalText>Very very good reason</originalText>
+                      </value>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+					<!-- Labeled for Single Use?, BOX H5 -->
+					<!-- Code is populated with Concept ID for question -->
+					<!-- populate true for YES -->
+					<!-- populate false for NO -->
+                      <code code="C53602" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Device_Labeled_for_single_use"/>
+                      <value xsi:type="BL" value="true"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+					<!-- If Remedial Action Initiated, Check Type, BOX H7 -->
+					<!-- Code is populated with Concept ID for Type_of_Remedial_Action, Value is code for Other -->
+                      <code code="C53603" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Remedial_Action"/>
+                      <value xsi:type="CE" code="C17649" codeSystem="2.16.840.1.113883.3.26.1.1">
+												<!-- populate below if OTHER was chosen for H7, text to explain OTHER -->
+                        <originalText>Something else entirely different happened</originalText>
+                      </value>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+											<!-- Usage of Device, BOX H8 -->
+											<!-- First code is populated with concept ID for Initial Usage, Value is code for Initial Usage -->
+                      <code code="C53645" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Usage_of_Device"/>
+                      <value xsi:type="CE" code="C53612" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                    </deviceObservation>
+                  </subjectOf>
+                  <subjectOf>
+                    <deviceObservation>
+					<!-- If action reported under 21 USC 360i(f) list correction/removal reporting number, BOX H9 -->
+					<!-- First code is populated with concept ID for Corrective_Action_Number, Value is id number -->
+                      <code code="C53619" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Corrective_Action_Number"/>
+                      <value xsi:type="ED" mediaType="text/plain">7778877</value>
+                    </deviceObservation>
+                  </subjectOf>
+                </identifiedDevice>
+              </device>
+              <authorOrPerformer typeCode="AUT">
+                <assignedEntity>
+				<!-- Operator of Device, BOX D5 Code is Value for Other -->
+                  <code code="C17649" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Operator_of_Medical_Device">
+					<!-- text for OTHER -->
+                    <originalText mediaType="text/plain">Hospital Worker Bee</originalText>
+                  </code>
+                </assignedEntity>
+              </authorOrPerformer>
+              <pertinentInformation1>
+                <observation moodCode="EVN">
+									<!-- Box D8 Is this a single use device that was reprocessed and reused on a patient? -->
+									<!-- Code is populated with Concept ID for question -->
+									<!-- populate true for YES -->
+									<!-- populate false for NO -->
+                  <code code="C53563" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Single-Use_Device_Reprocessed_and_Reused_on_Patient"/>
+                  <value xsi:type="BL" value="true"/>
+                </observation>
+              </pertinentInformation1>
+              <pertinentInformation1>
+                <observation moodCode="EVN">
+									<!-- Concomitant Medical Products and Therapy Dates, BOX D11 -->
+									<!-- First code is populated with concept ID for Concomitant_Therapy, Populate date of therapy if available, populate value with description of therapy -->
+                  <code code="C53630" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Concomitant_Therapy"/>
+                  <!-- Concomitant Medical Products and Therapy Dates\Date, BOX D11 -->
+                  <effectiveTime value="20030303"/>
+                  <value xsi:type="ED" mediaType="text/plain">Special treatment was given to the patient as necessary</value>
+                </observation>
+              </pertinentInformation1>
+              <pertinentInformation1>
+                <observation moodCode="EVN">
+				<!-- Concomitant Medical Products and Therapy Dates, BOX D11 -->
+				<!-- First code is populated with concept ID for Concomitant_Therapy, Populate date of therapy if available, populate value with description of therapy -->
+                  <code code="C53630" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Concomitant_Therapy"/>
+                  <!-- Concomitant Medical Products and Therapy Dates\Date, BOX D11 -->
+                  <effectiveTime value="20030303"/>
+                  <value xsi:type="ED" mediaType="text/plain">Second therapy</value>
+                </observation>
+              </pertinentInformation1>
+              <component1>
+                <implantation>
+					<!-- If Implanted, Give Date, BOX D6 -->
+                  <effectiveTime value="20030101"/>
+                </implantation>
+              </component1>
+              <component2>
+                <explantation>
+				<!-- If Explanted, Give Date, BOX D7 -->
+                  <effectiveTime value="20030110"/>
+                </explantation>
+              </component2>
+            </procedureEvent>
+          </pertainsTo>
+        </investigationEvent>
+      </subject>
+      <reasonOf>
+        <detectedIssueEvent>
+					<!-- Report Source, BOX G3 -->
+					<!-- First code is populated with concept ID for Report Source,
+                    Value is code for OTHER -->
+          <code code="C53566" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Report_Source">
+			<originalText>source not known</originalText> 
+		  </code>
+          <value xsi:type="CE" code="C17649" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+        </detectedIssueEvent>
+      </reasonOf>
+      <reasonOf>
+        <detectedIssueEvent>
+			<!-- Type of Report, BOX G7 -->
+			<!-- First code is populated with concept ID for Type of Report, Value is code for Follow Up -->
+          <code code="C53571" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Report"/>
+          <text mediaType="text/plain">8</text>
+          <value xsi:type="CE" code="C53579" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+        </detectedIssueEvent>
+      </reasonOf>
+      <reasonOf>
+        <detectedIssueEvent>
+					<!-- Type of Reportable Event, BOX H1 -->
+					<!-- First code is populated with concept ID for Type of Reportable Event, Value is code for Death -->
+          <code code="C53570" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Reportable_Event"/>
+          <value xsi:type="CE" code="C28554" codeSystem="2.16.840.1.113883.3.26.1.1">
+						<!-- Text to explain Other, BOX H1 -->
+            <originalText>If you had to explain other, you would do it here</originalText>
+          </value>
+        </detectedIssueEvent>
+      </reasonOf>
+      <reasonOf>
+        <detectedIssueEvent>
+					<!-- If Follow-up, What type?, BOX H2 -->
+					<!-- First code is populated with concept ID for Type of Follow up, Value is code for Additional Information Report -->
+          <code code="C53584" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="Type_of_Follow-up"/>
+          <value xsi:type="CE" code="C53586" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+        </detectedIssueEvent>
+      </reasonOf>
+      <reasonOf>
+        <detectedIssueEvent>
+					<!-- Populate form_code value. This is only applicable to few reporters -->
+					<!-- Value to populate will be provided if applicable -->
+                    <!-- If not applicable, please leave it blank, or eliminate this <reasonOf> block -->
+					<!-- Please contact eMDR staff if you have any questions -->
+          <code code="F77770" codeSystem="2.16.840.1.113883.3.24" codeSystemName="Form_Source"/>
+          <value xsi:type="CE" code="F77772" codeSystem="2.16.840.1.113883.3.24"/>
+        </detectedIssueEvent>
+      </reasonOf>
+    </controlActProcess>
+  </message>
+</PORR_IN040001UV01>

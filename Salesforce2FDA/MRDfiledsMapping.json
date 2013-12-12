@@ -1,0 +1,117 @@
+[
+    {"Name" : "Id", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Date_of_this_Report__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Complaint__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Mfg_Report_No__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Addtl_Mfg_Narrative__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Describe_Event__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Date_of_Event__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Patient_ID__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Sex__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Male","Code":"C20197"},
+            {"Value":"Female","Code":"C16576"}
+            ]},
+
+    {"Name" : "CMPL123CME__DOB__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Date_of_Death__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Weight__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Weight_Units_Patient__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Relevant_tests_and_lab_data__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Other_Relevant_History__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Loc_where_event_occurred__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Initial_Report_sent_to_FDA__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Yes","Code":"true"},
+            {"Value":"No","Code":"false"}
+            ]},
+    {"Name" : "CMPL123CME__Occupation__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Follow_up_No__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__UF_Dist_Report_No__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Type_of_Report__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Initial","Code":"C53620"},
+            {"Value":"5-day","Code":"C53573"},
+            {"Value":"7-day","Code":"C53574"},
+            {"Value":"10-day","Code":"C53575"},
+            {"Value":"15-day","Code":"C53576"},
+            {"Value":"30-day","Code":"C53577"},
+            {"Value":"Periodic","Code":"C53578"},
+            {"Value":"Follow Up No","Code":"C53579"}
+            ]},
+    {"Name" : "CMPL123CME__Date_facility_dist_was_aware__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Date_report_sent_to_FDA__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__User_Facility_Importer__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Importer","Code":"C53617"},
+            {"Value":"User Facility","Code":"C53567"}
+            ]},
+    {"Name" : "CMPL123CME__Report_sent_to_MFG__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Date_report_sent_to_MFG__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Date_received_by_MFG__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Outcomes_attributed_to_AE__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Death","Code":"C28554"},
+            {"Value":"Life-threatening","Code":"C41337"},
+            {"Value":"Disability or Permanent Damage","Code":"C21007"},
+            {"Value":"Congential Anomoly/Birth Defect","Code":"C2849"},
+            {"Value":"Hospitalization-initial or prolonged","Code":"C25179"},
+            {"Value":"Other Serious(Important Medical Events)","Code":"C17649"},
+            {"Value":"Required Intervention","Code":"C53578"}
+            ]},
+    {"Name" : "CMPL123CME__Other_No__c", "Value2CodeMapping" : null},    
+    {"Name" : "CMPL123CME__Serial_No__c", "Value2CodeMapping" : null},     
+    {"Name" : "CMPL123CME__Device_mfg_date__c", "Value2CodeMapping" : null},     
+    {"Name" : "CMPL123CME__Lot_No__c", "Value2CodeMapping" : null},     
+    {"Name" : "CMPL123CME__Expiration_Date__c", "Value2CodeMapping" : null},     
+    {"Name" : "CMPL123CME__Catalog_No__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Mfg_Phone_Number__c", "Value2CodeMapping" : null},   
+    {"Name" : "CMPL123CME__Model_No__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Common_Device_Name__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Brand_Name__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__PMA_510_k__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Device_available_for_Eval__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Yes","Code":"true"},
+            {"Value":"No","Code":"false"},
+            {"Value":"Returned to MFG","Code":"false"}
+            ]},
+    {"Name" : "CMPL123CME__Date_returned_to_MFG__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Approximate_age_of_device__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Device_Eval_By_Mfg__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Not Returned to Manufacturer","Code":"false"},
+            {"Value":"Yes","Code":"true"},
+            {"Value":"Evaluation Summary Attached","Code":"true"},
+            {"Value":"No","Code":"false"}
+            ]},
+    {"Name" : "CMPL123CME__Labeled_for_single_use__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__If_Remedical_Action_Init__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Recall","Code":"C53609"},
+            {"Value":"Repair","Code":"C53611"},
+            {"Value":"Replace","Code":"C53610"},
+            {"Value":"Relabeling","Code":"C53608"},
+            {"Value":"Notification","Code":"C25297"},
+            {"Value":"Inspection","Code":"C53604"},
+            {"Value":"Patient Monitoring","Code":"C53607"},
+            {"Value":"Modification/Adjustment","Code":"C53606"},
+            {"Value":"Other","Code":"C17649"}
+            ]},
+    {"Name" : "CMPL123CME__Other_Remedial_Action__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Usage_of_Device__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Initial Use of Device","Code":"C53612"},
+            {"Value":"Reuse","Code":"C53613"},
+            {"Value":"Unknown","Code":"C38046"}
+            ]},
+    {"Name" : "CMPL123CME__Correction_Removal_Report_No__c", "Value2CodeMapping" : null},
+    {"Name" : "CMPL123CME__Operator_of_Device__c", 
+        "Value2CodeMapping" :[
+            {"Value":"Health Professional","Code":"C53287"},
+            {"Value":"Lay User/Patient","Code":"C16960"},
+            {"Value":"Other","Code":"C17649"}
+            ]},
+    {"Name" : "CMPL123CME__Other_operator_of_Device__c", "Value2CodeMapping" : null}
+            
+]

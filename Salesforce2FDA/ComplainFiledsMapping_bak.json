@@ -1,0 +1,11 @@
+[
+    {"Name" : "Id", "Value2CodeMapping" : null},
+    {"Name" : "CMPL__Reporter_Type__c",
+        "Value2CodeMapping":[
+            {"Value":"Marketing Authorized Holder","Code":"T95001"},
+            {"Value":"Manufacture","Code":"C53616"},
+            {"Value":"Distributor","Code":"C48289"},
+            {"Value":"Regulatory Authority","Code":"T95009"},
+            {"Value":"Other","Code":"C17649"}
+            ]}
+]
